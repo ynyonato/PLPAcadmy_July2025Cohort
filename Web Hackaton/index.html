@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Yawo T. Anyonawo NYONATO, a web enthusiast passionate about web technologies and data." />
+  <title>Yawo T. Anyonawo NYONATO | Web Portfolio</title>
+
+  <!-- Devicon CSS for language icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <style>
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fefefe;
+      color: #222;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover, a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+
+    /* HEADER with profile pic left of name/tagline */
+    header {
+      background-color: #e1f0ff;
+      padding: 1.5rem 1rem;
+      border-bottom: 2px solid #007acc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .profile-placeholder {
+      flex-shrink: 0;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #007acc 30%, #00a2ff 70%);
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+    .header-text {
+      max-width: 600px;
+      text-align: left;
+    }
+    header h1 {
+      margin: 0 0 0.25rem;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #004b80;
+    }
+    header p {
+      margin: 0;
+      font-style: italic;
+      font-weight: 500;
+      color: #005f99;
+      font-size: 1.2rem;
+    }
+    nav {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    nav ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #007acc;
+      color: white;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      width: 100%;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      border-bottom: 3px solid #007acc;
+      padding-bottom: 0.3rem;
+      color: #004b80;
+      font-size: 1.7rem;
+    }
+    p, ul {
+      font-size: 1rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    /* TWO COLUMN for Skills section */
+    #skills ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 1fr));
+      gap: 0.5rem 2rem;
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    #skills li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+    }
+    .profile-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+}
+
+    /* Devicon icon sizing and color */
+    .devicon-html5-plain,
+    .devicon-css3-plain,
+    .devicon-python-plain,
+    .devicon-mysql-plain {
+      font-size: 1.5rem;
+      vertical-align: middle;
+      color: #007acc;
+      flex-shrink: 0;
+    }
+
+    /* TWO COLUMN container (Education and Projects) */
+    .columns-container {
+      display: flex;
+      gap: 2rem;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .columns-container > section {
+      flex: 1 1 45%;
+      min-width: 280px;
+    }
+
+    /* Projects as boxes in grid */
+    .projects-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding-left: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .projects-list li {
+      border: 2px solid #007acc;
+      padding: 1rem;
+      border-radius: 8px;
+      background-color: #f9fbff;
+      transition: box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .projects-list li:hover,
+    .projects-list li:focus-within {
+      box-shadow: 0 4px 12px rgba(0,122,204,0.4);
+      outline: none;
+    }
+    .projects-list a {
+      color: #004b80;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      text-decoration: none;
+    }
+    .projects-list a:hover,
+    .projects-list a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+
+    .contact-links a {
+      margin-right: 1rem;
+      font-weight: 600;
+    }
+
+    .contact-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.contact-form {
+  flex: 1 1 320px;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+  border: 1.5px solid #aad3f5;
+  border-radius: 4px;
+  background: #f8fbff;
+  color: #222;
+  transition: border-color 0.2s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #007acc;
+  outline: none;
+}
+.contact-form button {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 0.3rem;
+}
+.contact-form button:hover,
+.contact-form button:focus {
+  background-color: #004b80;
+}
+.contact-info {
+  flex: 1 1 180px;
+  min-width: 180px;
+  padding: 0.5rem 1rem;
+}
+
+/* Stack vertically on small screens */
+@media (max-width: 800px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .contact-info {
+    padding: 0;
+  }
+}
+
+    footer {
+      background-color: #e1f0ff;
+      text-align: center;
+      padding: 1rem 1rem;
+      font-size: 0.95rem;
+      color: #004b80;
+      border-top: 2px solid #007acc;
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .header-text {
+        max-width: 100%;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .profile-placeholder {
+        width: 120px;
+        height: 120px;
+        font-size: 2.5rem;
+      }
+      .columns-container {
+        flex-direction: column;
+      }
+      .columns-container > section {
+        flex: 1 1 100%;
+      }
+      /* Skills list to one column on small screens */
+      #skills ul {
+        grid-template-columns: 1fr;
+        gap: 0.3rem 1rem;
+      }
+      /* Projects single column on small screens */
+      .projects-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="ID.jpg" alt="Profile picture of Yawo T. Anyonawo NYONATO" class="profile-image" />
+
+    <div class="header-text">
+      <h1>Yawo T. Anyonawo NYONATO</h1>
+      <p>Web Enthusiast, giving life to ideas</p>
+    </div>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#skills">Programming Languages</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about-me" tabindex="-1">
+      <h2>About Me</h2>
+      <p>
+        Passionate about web technologies and data. With a strong foundation in programming and problem solving, I strive to create meaningful digital experiences that empower users and businesses alike.</p>
+        <p>I design and integrate custom in-house operational software and new database architectures using PostgreSQL, SQL Server and Oracle Databases. With high Database Administration skills, I'm also comfortable with various automation using Bash script, Python, C# and Excel VBA. I also optimize data acquisition and reporting processes for various business needs. With over 15 years of experience in ICT business and project management, I have a strong background in leading and conducting projects, troubleshooting network issues, and implementing security standards. 
+      </p>
+    </section>
+
+    <div class="columns-container">
+      <section id="skills" tabindex="-1">
+        <h2>Programming Languages</h2>
+        <ul>
+  <li><i class="devicon-html5-plain colored" title="HTML"></i> HTML</li>
+  <li><i class="devicon-css3-plain colored" title="CSS"></i> CSS</li>
+  <li><i class="devicon-python-plain colored" title="Python"></i> Python</li>
+  <li><i class="devicon-mysql-plain colored" title="SQL"></i> SQL</li>
+  <li><i class="devicon-csharp-plain colored" title="C#"></i> C#</li>
+  <li><i class="devicon-postgresql-plain colored" title="PostgreSQL"></i> PostgreSQL</li>
+</ul>
+
+      </section>
+
+      <section id="education" tabindex="-1">
+        <h2>Education</h2>
+        <ul>
+          <li>Master 2 in International Management</li>
+          <li>Bachelor in Computer Science, App Development</li><br/>
+          <a href="https://drive.google.com/file/d/1uM-8JfDLENVtDDXB1QAXWIRHAEswBdZa/view?usp=drive_link"><i>Download my CV</i></a> 
+        </ul>
+      </section>
+
+      <section id="projects" tabindex="-1">
+        <h2>Projects</h2>
+        <ul class="projects-list">
+          <li>
+            <a href="https://demo-ia-sme.streamlit.app/" aria-label="Link to SM-SE IA toolkit project" tabindex="0" rel="_blank">SM-SE IA toolkit</a>
+            <p>An AI-powered toolkit designed to enhance business processes.</p>
+          </li>
+          <li>
+            <a href="#" aria-label="Link to Albatros project" tabindex="0">Albatros</a>
+            <p>A web application aiming to simplify data management and visualization.</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+    
+    <section id="contact" tabindex="-1">
+  <h2>Contact Me</h2>
+  <div class="contact-container">
+    <form 
+      action="https://formspree.io/f/xqaldjqk" 
+      method="POST"
+      class="contact-form"
+      autocomplete="on"
+    >
+      <label for="name">Name<span aria-hidden="true">*</span>:</label><br/>
+      <input type="text" id="name" name="name" required autocomplete="name"/>
+
+      <label for="email">Email<span aria-hidden="true">*</span>:</label><br/>
+      <input type="email" id="email" name="_replyto" required autocomplete="email"/>
+
+      <label for="message">Message<span aria-hidden="true">*</span>:</label><br/>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="contact-info">
+      <p style="margin-top:0;">
+        Or contact me directly at:
+      </p>
+      <p>
+        <strong>Email:</strong> <a href="mailto:ynyonato@gmail.com">ynyonato@gmail.com</a><br />
+        <strong>GitHub:</strong> <a href="https://github.com/ynyonato" target="_blank" rel="noopener noreferrer">@ynyonato</a><br />
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yawo-t-a-nyonato-83992971/" target="_blank" rel="noopener noreferrer">Yawo T. Anyonawo NYONATO</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Yawo T. Anyonawo NYONATO</p>
+  </footer>
+</body>
+</html>
