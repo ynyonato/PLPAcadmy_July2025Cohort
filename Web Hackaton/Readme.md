@@ -51,7 +51,7 @@ Technologies Used
 
 Live Demo
 
-[Provide the live site URL once deployed, e.g. https://ynyonato.github.io/portfolio/]
+https://hackaton-plp-acadmy-july2025-cohort.vercel.app/
 
 How to Use
 
@@ -63,7 +63,7 @@ How to Use
 
         Set up a Formspree account and replace the form action URL with your Formspree form address.
 
-    Deploy to GitHub Pages or your preferred static site host.
+    Deploy to Vercel.
 
 Author
 
