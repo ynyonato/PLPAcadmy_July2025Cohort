@@ -1,0 +1,128 @@
+/* Transitions and hover effect for buttons */
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #0077cc;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Keyframes for fadeIn animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Applying fadeIn animation */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Card flip container */
+.card {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  margin: 20px auto;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.card-back {
+  background: #e3e7eb;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Popup/modal style */
+.popup {
+  width: 500px;
+  height: 250px;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -200%);
+  background: #ffffff;
+  text-align: center;
+  vertical-align: middle;
+  padding: 20px;
+  border: 2px solid #1b1c1d;
+  border-radius: 8px;
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 1000;
+}
+
+.popup.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+#statusMsg{
+    text-align: center;
+}
+
+#popupCloseBtn{
+    position: fixed;
+    top: 5%;
+    left: 85%;
+    border: none;
+    background-color: #ffffff;
+}
+
+/* Style et animation de chargement */
+@keyframes loadingSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#startBtn {
+    width: 25px;
+    height: 2px;
+    display: inline-block; 
+    vertical-align: middle;
+}
+
+#startBtn.loading {
+  animation: loadingSpin 1s linear infinite;
+  background-color: #a8b8c4;
+  color: white;
+  pointer-events: none; 
+  transition: background-color 0.3s ease;
+}
+
+/* Dark mode toggle */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Animation & JS - Week 7 Assignment </title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Yawo Nyonato - Welcome to CSS3 & JavaScript Festival</h1>
+    <button id="toggleDarkModeBtn">Toggle Dark/Light Mode</button>
+    <button id="showPopupBtn">Start the show</button>
+  </header>
+
+  <main>
+    <section>
+      <h2>Click the card to reveal the hidden treasure</h2>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">???</div>
+          <div class="card-back">🪙🪙🪙🪙🪙🪙🪙🪙🪙🪙🪙🪙🪙🪙🪙</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div id="popup" class="popup">
+        <p id="statusMsg">
+            <div id="startBtn"></div>
+        </p>
+        <button id="popupCloseBtn">X</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
